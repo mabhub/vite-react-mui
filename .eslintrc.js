@@ -4,7 +4,9 @@ const off    = 'off';
 const always = 'always';
 
 module.exports = {
-  parser: 'babel-eslint',
+  parserOptions: {
+    ecmaVersion: 'latest',
+  },
   extends: [
     'airbnb',
     'airbnb/hooks',
@@ -12,7 +14,6 @@ module.exports = {
   ],
   env: {
     browser: true,
-    jest: true,
   },
   rules: {
     'arrow-parens': [error, 'as-needed'],
@@ -42,6 +43,10 @@ module.exports = {
 
     'react-hooks/exhaustive-deps': [warn],
     'react-hooks/rules-of-hooks': [warn],
+
+    'react/function-component-definition': [error, {
+      namedComponents: ['arrow-function'],
+    }],
 
     'key-spacing': [error, {
       singleLine: { mode: 'strict' },
