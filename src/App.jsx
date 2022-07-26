@@ -1,24 +1,17 @@
-import { useState } from 'react';
-import { Button, Container } from '@mui/material';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from 'react-router-dom';
 
-const App = () => {
-  const [count, setCount] = useState(0);
+import Home from './components/Home';
 
-  return (
-    <Container>
-      <header className="App-header">
-        <p>Hello Vite + React!</p>
-        <p>
-          <Button
-            onClick={() => setCount(c => c + 1)}
-            variant="outlined"
-          >
-            count is: {count}
-          </Button>
-        </p>
-      </header>
-    </Container>
-  );
-};
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Home />} />
+    </Routes>
+  </BrowserRouter>
+);
 
 export default App;
