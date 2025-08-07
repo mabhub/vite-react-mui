@@ -25,12 +25,12 @@ module.exports = {
     'space-before-function-paren': [error, always],
 
     'import/extensions': [warn],
-    'import/no-extraneous-dependencies': [warn, { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/*.stories.js'] }],
+    'import/no-extraneous-dependencies': [warn, { devDependencies: ['**/*.test.js', '**/*.spec.js', '**/*.stories.js', 'vite.config.js', 'vitest.config.js'] }],
     'import/no-named-as-default': [off],
     'import/no-unresolved': [warn],
 
     'jsx-a11y/anchor-is-valid': [error, { specialLink: ['to'] }],
-    'jsx-a11y/label-has-for': [error, { required: { some: ['nesting', 'id'] } }],
+    'jsx-a11y/label-has-associated-control': [error, { required: { some: ['nesting', 'id'] } }],
 
     'react/jsx-filename-extension': [warn, { extensions: ['.js', '.jsx'] }],
     'react/jsx-one-expression-per-line': [off],
