@@ -68,4 +68,12 @@ module.exports = {
       allowTaggedTemplates: true,
     }],
   },
+  overrides: [
+    {
+      files: ['vite.config.js', 'vitest.config.js', '*.config.js'],
+      rules: {
+        'no-console': off,
+      },
+    },
+  ],
 };

@@ -6,29 +6,76 @@ import {
   CssBaseline,
   responsiveFontSizes,
   ThemeProvider,
+  useMediaQuery,
 } from '@mui/material';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import App from './App';
+import ErrorBoundary from './components/ErrorBoundary';
 
-const queryClient = new QueryClient();
-
-const theme = responsiveFontSizes(createTheme({
-  palette: {
-    primary: {
-      main: '#adb31b',
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      retry: 1,
+      refetchOnWindowFocus: false,
+      staleTime: 5 * 60 * 1000, // 5 minutes
     },
   },
-}));
+});
+
+const ThemeWrapper = () => {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = React.useMemo(() => responsiveFontSizes(createTheme({
+    palette: {
+      mode: prefersDarkMode ? 'dark' : 'light',
+      primary: {
+        main: '#adb31b',
+      },
+      secondary: {
+        main: '#ff6b35',
+      },
+    },
+    typography: {
+      fontFamily: [
+        '-apple-system',
+        'BlinkMacSystemFont',
+        '"Segoe UI"',
+        'Roboto',
+        '"Helvetica Neue"',
+        'Arial',
+        'sans-serif',
+        '"Apple Color Emoji"',
+        '"Segoe UI Emoji"',
+        '"Segoe UI Symbol"',
+      ].join(','),
+    },
+    components: {
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            textTransform: 'none',
+          },
+        },
+      },
+    },
+  })), [prefersDarkMode]);
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <ErrorBoundary>
+        <App />
+      </ErrorBoundary>
+    </ThemeProvider>
+  );
+};
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
+      <ThemeWrapper />
     </QueryClientProvider>
   </React.StrictMode>,
 );
