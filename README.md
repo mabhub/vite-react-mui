@@ -9,7 +9,7 @@ Un template moderne et optimisé pour créer des applications React avec Vite, M
 - **[Material-UI (MUI) v6](https://mui.com/)** - Composants React avec Material Design
 - **[TanStack Query](https://tanstack.com/query)** - Gestion des données et cache intelligent
 - **[React Router v7](https://reactrouter.com/)** - Navigation côté client
-- **[ESLint](https://eslint.org/)** - Linting
+- **[Oxlint](https://oxc.rs/)** - Linter JavaScript/TypeScript ultra-rapide
 
 ## ✨ Fonctionnalités
 
@@ -17,7 +17,7 @@ Un template moderne et optimisé pour créer des applications React avec Vite, M
 - 🛡️ **Error Boundary** pour une gestion d'erreurs
 - 📱 **Design responsive** avec breakpoints Material-UI
 - ⚡ **Configuration optimisée** de TanStack Query
-- 🔧 **Configuration ESLint complète**
+- 🔧 **Configuration Oxlint complète**
 - 🌐 **Support HTTPS** en développement (optionnel)
 
 ## 🛠️ Installation et démarrage
@@ -80,7 +80,7 @@ Configuration par défaut optimisée :
 - `npm run dev` - Serveur de développement
 - `npm run build` - Build de production
 - `npm run serve` - Aperçu du build
-- `npm run lint` - Analyse du code avec ESLint
+- `npm run lint` - Analyse du code avec oxlint
 - `npm run start` - Alias pour `npm run dev`
 
 ## 🔍 Bonnes pratiques incluses
@@ -90,7 +90,7 @@ Configuration par défaut optimisée :
 - **Accessibilité** avec attributs ARIA appropriés
 - **SEO** avec meta tags optimisés
 - **Performance** avec lazy loading et optimisations
-- **Code quality** avec ESLint et configuration Airbnb
+- **Code quality** avec oxlint
 
 ## 🚦 Node.js
 

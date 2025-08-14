@@ -2,9 +2,9 @@ import { defineConfig } from 'vite';
 // import react from '@vitejs/plugin-react';
 import react from '@vitejs/plugin-react-swc';
 
-import fs from 'fs';
-import path from 'path';
-import os from 'os';
+import fs from 'node:fs';
+import path from 'node:path';
+import os from 'node:os';
 
 // HTTPS configuration (optional)
 // Set VITE_HTTPS=false to disable HTTPS in development

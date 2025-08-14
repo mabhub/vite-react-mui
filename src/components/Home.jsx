@@ -39,7 +39,7 @@ const Home = () => {
             • TanStack Query pour la gestion des données<br />
             • React Router pour la navigation<br />
             • Vite pour un développement rapide<br />
-            • ESLint avec configuration Airbnb
+            • Oxlint pour l'analyse de code rapide
           </Typography>
         </Box>
 
