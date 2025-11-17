@@ -31,7 +31,7 @@ class ErrorBoundary extends React.Component {
     });
 
     // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
+    if (import.meta.env.DEV) {
       // eslint-disable-next-line no-console
       console.error('Error caught by boundary:', error, errorInfo);
     }
@@ -61,7 +61,7 @@ class ErrorBoundary extends React.Component {
                 L'application a rencontré un problème. Veuillez réessayer ou contacter le
                 support si le problème persiste.
               </Typography>
-              {process.env.NODE_ENV === 'development' && error && (
+              {import.meta.env.DEV && error && (
                 <Typography
                   variant="caption"
                   component="pre"

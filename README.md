@@ -4,10 +4,10 @@ Un template moderne et optimisé pour créer des applications React avec Vite, M
 
 ## 🚀 Technologies incluses
 
-- **[React 19](https://react.dev/)** - Dernière version
-- **[Vite](https://vitejs.dev/)** - Build tool rapide et moderne
-- **[Material-UI (MUI) v6](https://mui.com/)** - Composants React avec Material Design
-- **[TanStack Query](https://tanstack.com/query)** - Gestion des données et cache intelligent
+- **[React 19](https://react.dev/)** - Dernière version avec hooks modernes
+- **[Vite 7](https://vitejs.dev/)** - Build tool rapide et moderne
+- **[Material-UI (MUI) v7](https://mui.com/)** - Composants React avec Material Design
+- **[TanStack Query v5](https://tanstack.com/query)** - Gestion des données et cache intelligent
 - **[React Router v7](https://reactrouter.com/)** - Navigation côté client
 - **[Oxlint](https://oxc.rs/)** - Linter JavaScript/TypeScript ultra-rapide
 
@@ -16,9 +16,12 @@ Un template moderne et optimisé pour créer des applications React avec Vite, M
 - 🎨 **Thème personnalisable** et support du mode sombre automatique
 - 🛡️ **Error Boundary** pour une gestion d'erreurs
 - 📱 **Design responsive** avec breakpoints Material-UI
-- ⚡ **Configuration optimisée** de TanStack Query
-- 🔧 **Configuration Oxlint complète**
+- ⚡ **Configuration optimisée** de TanStack Query avec DevTools
+- 🧪 **Tests unitaires** avec Vitest et React Testing Library
+- 🔧 **Configuration Oxlint complète** avec règles strictes
+- 🎨 **Layout réutilisable** avec AppBar et Footer
 - 🌐 **Support HTTPS** en développement (optionnel)
+- 📦 **Variables d'environnement** avec `.env.example`
 
 ## 🛠️ Installation et démarrage
 
@@ -45,7 +48,10 @@ npm run lint
 src/
 ├── components/
 │   ├── ErrorBoundary.jsx   # Gestion globale des erreurs
-│   └── Home.jsx            # Page d'accueil exemple
+│   ├── Layout.jsx          # Layout principal avec AppBar/Footer
+│   ├── Home.jsx            # Page d'accueil exemple
+│   └── Home.test.jsx       # Tests du composant Home
+├── setupTests.js           # Configuration des tests
 ├── App.jsx                 # Composant principal avec routing
 └── main.jsx                # Point d'entrée avec providers
 ```
@@ -59,13 +65,29 @@ Le thème Material-UI est configuré dans `src/main.jsx` avec :
 
 ## 🔧 Configuration
 
+### Variables d'environnement
+
+Copiez le fichier `.env.example` en `.env.local` pour personnaliser votre configuration :
+
+```bash
+cp .env.example .env.local
+```
+
+Variables disponibles :
+
+- `VITE_APP_TITLE` - Titre de l'application
+- `VITE_API_URL` - URL de votre API backend
+- `VITE_HTTPS` - Active/désactive HTTPS en développement (`true`/`false`)
+
+**Note** : Les variables doivent commencer par `VITE_` pour être accessibles dans l'application.
+
 ### HTTPS en développement (optionnel)
 
 Le template inclut une configuration HTTPS pour le développement. Pour l'utiliser :
 
 1. Créez un dossier `~/https/` avec vos certificats SSL
 2. Ajoutez `key.pem` et `cert.pem` dans ce dossier
-3. Sinon, modifiez ou supprimez la configuration HTTPS dans `vite.config.js`
+3. Définissez `VITE_HTTPS=true` dans votre `.env.local`
 
 ### TanStack Query
 
@@ -79,8 +101,12 @@ Configuration par défaut optimisée :
 
 - `npm run dev` - Serveur de développement
 - `npm run build` - Build de production
-- `npm run serve` - Aperçu du build
-- `npm run lint` - Analyse du code avec oxlint
+- `npm run preview` - Aperçu du build
+- `npm test` - Lance les tests en mode watch
+- `npm run test:ui` - Interface graphique pour les tests
+- `npm run test:coverage` - Rapport de couverture des tests
+- `npm run lint` - Analyse du code avec Oxlint
+- `npm run lint:fix` - Correction automatique des erreurs
 - `npm run start` - Alias pour `npm run dev`
 
 ## 🔍 Bonnes pratiques incluses
@@ -94,9 +120,10 @@ Configuration par défaut optimisée :
 
 ## 🚦 Node.js
 
-Ce projet utilise Node.js version **22** (voir `.nvmrc`).
+Ce projet utilise Node.js version **24** (voir `.nvmrc`).
 
 Si vous utilisez nvm :
+
 ```bash
 nvm use
 ```

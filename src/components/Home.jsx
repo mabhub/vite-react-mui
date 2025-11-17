@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import {
   Button,
-  Container,
   Typography,
   Box,
   Paper,
 } from '@mui/material';
+
+import Layout from './Layout';
 
 /**
  * Home page component with a simple counter example
@@ -20,7 +21,7 @@ const Home = () => {
   };
 
   return (
-    <Container maxWidth="md" sx={{ py: 4 }}>
+    <Layout>
       <Paper elevation={1} sx={{ p: 4, textAlign: 'center' }}>
         <Typography variant="h3" component="h1" gutterBottom color="primary">
           Vite + React + MUI
@@ -35,10 +36,10 @@ const Home = () => {
           </Typography>
           <Typography variant="body2" color="text.secondary" component="div">
             • React 19 avec hooks modernes<br />
-            • Material-UI avec thème personnalisé et mode sombre<br />
-            • TanStack Query pour la gestion des données<br />
-            • React Router pour la navigation<br />
-            • Vite pour un développement rapide<br />
+            • Material-UI v7 avec thème personnalisé et mode sombre<br />
+            • TanStack Query v5 pour la gestion des données<br />
+            • React Router v7 pour la navigation<br />
+            • Vite 7 pour un développement ultra-rapide<br />
             • Oxlint pour l'analyse de code rapide
           </Typography>
         </Box>
@@ -62,7 +63,7 @@ const Home = () => {
           </Button>
         </Box>
       </Paper>
-    </Container>
+    </Layout>
   );
 };
 

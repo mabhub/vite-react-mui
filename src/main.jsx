@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import App from './App';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -76,6 +77,7 @@ ReactDOM.createRoot(document.querySelector('#root')).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <ThemeWrapper />
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   </React.StrictMode>,
 );
