@@ -39,7 +39,7 @@ const Home = () => {
             • Material-UI v7 avec thème personnalisé et mode sombre<br />
             • TanStack Query v5 pour la gestion des données<br />
             • React Router v7 pour la navigation<br />
-            • Vite 7 pour un développement ultra-rapide<br />
+            • Vite 8 pour un développement ultra-rapide<br />
             • Oxlint pour l'analyse de code rapide
           </Typography>
         </Box>

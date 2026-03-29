@@ -61,6 +61,6 @@ describe('home component', () => {
     expect(screen.getAllByText(/Material-UI v7/i).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/TanStack Query v5/i).length).toBeGreaterThan(0);
     expect(screen.getByText(/React Router v7 pour la navigation/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Vite 7/i).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Vite 8/i).length).toBeGreaterThan(0);
   });
 });
