@@ -1,7 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { describe, it, expect } from 'vitest';
 import { userEvent } from '@testing-library/user-event';
-import Home from '../components/Home';
+import Home from './Home';
 
 describe('home component', () => {
   it('renders the main heading', () => {
@@ -58,9 +57,9 @@ describe('home component', () => {
     render(<Home />);
 
     expect(screen.getByText(/React 19 avec hooks modernes/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Material-UI v7/i).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/TanStack Query v5/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Material-UI v7 avec thème/i)).toBeInTheDocument();
+    expect(screen.getByText(/TanStack Query v5 pour la gestion/i)).toBeInTheDocument();
     expect(screen.getByText(/React Router v7 pour la navigation/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/Vite 8/i).length).toBeGreaterThan(0);
+    expect(screen.getByText(/Vite 8 pour un développement/i)).toBeInTheDocument();
   });
 });
