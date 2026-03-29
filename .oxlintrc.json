@@ -9,7 +9,6 @@
     "node",
     "oxc",
     "promise",
-    "regex",
     "typescript",
     "unicorn",
     "vitest"
@@ -176,7 +175,7 @@
     "import/no-amd": ["error"],
     "import/no-anonymous-default-export": ["off", { "allowArray": false, "allowArrowFunction": false, "allowAnonymousClass": false, "allowAnonymousFunction": false, "allowLiteral": false, "allowObject": false }],
     // "import/no-commonjs": ["off"],
-    "import/no-cycle": ["error", { "maxDepth": "∞", "ignoreExternal": false, "allowUnsafeDynamicCyclicDependency": false, "disableScc": false }],
+    "import/no-cycle": ["error"],
     "import/no-default-export": ["off"],
     "import/no-duplicates": ["error"],
     "import/no-dynamic-require": ["error"],
@@ -235,7 +234,7 @@
     // ========================================
 
     "jsx-a11y/alt-text": ["error", { "elements": ["img", "object", "area", "input[type=\"image\"]"], "img": [], "object": [], "area": [], "input[type=\"image\"]": [] }],
-    "jsx-a11y/anchor-has-content": ["error", { "components": [] }],
+    "jsx-a11y/anchor-has-content": ["error"],
     "jsx-a11y/anchor-is-valid": ["error", { "specialLink": ["to"] }],
     "jsx-a11y/aria-activedescendant-has-tabindex": ["error"],
     "jsx-a11y/aria-props": ["error"],
