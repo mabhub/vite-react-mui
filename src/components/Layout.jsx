@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
         </Typography>
         <IconButton
           color="inherit"
-          href="https://github.com"
+          href={import.meta.env.VITE_GITHUB_URL || 'https://github.com'}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="GitHub repository"
